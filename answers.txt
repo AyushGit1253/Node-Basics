@@ -1,0 +1,40 @@
+Node.js uses an event-driven architecture to handle asynchronous I/O operations. 
+When a function is called that performs an I/O operation, 
+it registers a callback function to be called when the operation completes. While waiting for the I/O operation to complete,
+Node.js continues to execute other tasks, such as processing incoming requests or handling other events. 
+Once the I/O operation is complete, Node.js triggers the callback function, passing any relevant data as arguments.
+Node.js provides an event emitter class that can be used to emit and listen for events. 
+An event emitter is an object that emits named events and allows callbacks to be registered for those events.
+ When an event is emitted, all registered callbacks are called synchronously.
+
+Node.js is an ideal platform for event-driven programming due to its non-blocking I/O model. 
+This model allows Node.js to handle multiple requests simultaneously without blocking the execution of other requests.
+This makes Node.js a great choice for building real-time web applications that require fast and responsive processing.
+In Node.js, events are handled using the EventEmitter class.
+This class allows developers to create custom events and attach event listeners to handle those events. 
+
+since nodejs uses event loops, it can handle parallely 1000's of parallel tasks
+despite the fact that JavaScript is single-threaded. 
+It is done by assigning operations to the operating system whenever and wherever possible. 
+Most operating systems are multi-threaded and hence can handle multiple operations executing in the background.
+ When one of these operations is completed, the kernel tells Node.js,
+and the respective callback assigned to that operation is added to the event queue which will eventually be executed
+
+
+process.exit() is a method in Node.js that allows you to forcefully terminate the Node.js process. 
+It immediately stops the event loop and terminates the program.
+This can be useful in situations where you want to exit the program based on certain conditions or handle shutdown procedures
+
+ req.url: This property contains the URL portion of the request. 
+ It includes the pathname and any query parameters. 
+ For example, if the incoming request is http://example.com/products?category=electronics, 
+ then req.url will be /products?category=electronics.
+
+req.headers: This property contains an object representing the HTTP headers of the incoming request. 
+These headers include metadata about the request, such as the user agent, content type, and more.
+ It is an object where each property corresponds to a header field, and the value of the property holds the header value.
+  For example, you can access the user agent header with req.headers['user-agent'].
+
+req.method: This property contains the HTTP method used in the request.
+HTTP methods include GET, POST, PUT, DELETE, and more. req.method allows you to determine the type of request that is being made.
+For example, if the incoming request is a GET request, then req.method will be 'GET'.
